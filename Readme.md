@@ -4,5 +4,6 @@
     docker-compose up --build
  
 ### Description
-* Just have one main server and one microservice
+* grpc-client: main server
+* grpc-server: microservice
 * Test: Postman or BloomRPC

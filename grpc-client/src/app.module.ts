@@ -12,7 +12,8 @@ import { AppService } from './app.service';
         name: 'SAMPLE_PACKAGE',
         transport: Transport.GRPC,
         options: {
-          url: 'localhost:5000',
+          // url: 'localhost:5000',
+          url: 'grpc-server:5000',
           package: 'sample',
           protoPath: join(__dirname, 'proto/sample.proto'),
         },

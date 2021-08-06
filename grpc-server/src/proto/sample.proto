@@ -1,16 +1,22 @@
 syntax = "proto3";
 
+// main의 package에 설정한 이름
 package sample;
 
+// 각 컨트롤러마다 service를 하나씩 선언한
 service AppService {
-  rpc FindOne (SampleDataById) returns (SampleData) {}
+  // 각 컨트롤러의 모든 메서드에 rpc가 대응된다
+  // input과 return 타입을 지정할 수 있
+  rpc FindOne (SampleDataById) returns (SampleData);
 }
 
+// array를 사용하려면 repeated
+// => repeated double data = 1;
 message SampleDataById {
   int32 id = 1;
 }
 
 message SampleData {
-  int32 id = 1;
-  string name = 2;
+  int32 id = 1;     // 첫번째 인자
+  string name = 2;  // 두번째 인자
 }

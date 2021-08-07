@@ -4,19 +4,19 @@ syntax = "proto3";
 package sample;
 
 // 각 컨트롤러마다 service를 하나씩 선언한
-service AppService {
+service HeroService {
   // 각 컨트롤러의 모든 메서드에 rpc가 대응된다
   // input과 return 타입을 지정할 수 있
-  rpc FindOne (SampleDataById) returns (SampleData);
+  rpc FindOne (HeroDataById) returns (HeroData);
 }
 
 // array를 사용하려면 repeated
 // => repeated double data = 1;
-message SampleDataById {
+message HeroDataById {
   int32 id = 1;
 }
 
-message SampleData {
+message HeroData {
   int32 id = 1;     // 첫번째 인자
   string name = 2;  // 두번째 인자
 }

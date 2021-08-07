@@ -6,6 +6,7 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
+    "protoc": " protoc --plugin=./node_modules/.bin/protoc-gen-ts_proto --ts_proto_out=. ./src/**/protos/*.proto --ts_proto_opt=nestJs=true",
     "prebuild": "rimraf dist",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
@@ -27,9 +28,11 @@
     "@nestjs/core": "^8.0.0",
     "@nestjs/microservices": "^8.0.6",
     "@nestjs/platform-express": "^8.0.0",
+    "nestjs-proto-gen-ts": "^1.0.18",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
-    "rxjs": "^7.2.0"
+    "rxjs": "^7.2.0",
+    "ts-proto": "^1.82.5"
   },
   "devDependencies": {
     "@nestjs/cli": "^8.0.0",

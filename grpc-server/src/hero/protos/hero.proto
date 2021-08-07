@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+// main의 package에 설정한 이름
+package sample;
+
+// 각 컨트롤러마다 service를 하나씩 선언한
+service HeroService {
+  // 각 컨트롤러의 모든 메서드에 rpc가 대응된다
+  // input과 return 타입을 지정할 수 있
+  rpc FindOne (HeroDataById) returns (HeroData);
+}
+
+// array를 사용하려면 repeated
+// => repeated double data = 1;
+message HeroDataById {
+  int32 id = 1;
+}
+
+message HeroData {
+  int32 id = 1;     // 첫번째 인자
+  string name = 2;  // 두번째 인자
+}

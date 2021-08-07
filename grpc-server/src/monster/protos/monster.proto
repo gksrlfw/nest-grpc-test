@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package sample;
+
+service MonsterService {
+  rpc FindOne (MonsterDataById) returns (MonsterData);
+}
+
+message MonsterDataById {
+  int32 id = 1;
+}
+
+message MonsterData {
+  int32 id = 1;
+  string name = 2;
+}
